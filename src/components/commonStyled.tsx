@@ -10,7 +10,9 @@ const StyledTable = styled.table`
   font-family: ${metrics.FontFamily.Code};
   background-color: ${color.CODE_BG_COLOR};
 
-  tr, td, th {
+  tr,
+  td,
+  th {
     border: 1px solid black;
     padding: 2px;
   }
@@ -28,12 +30,12 @@ export const PreviewArea = styled.div`
 
 export interface ComponentDetail {
   data: {
-    name: string,
-    type: string,
-    isRequired?: boolean,
-    default?: string,
-    description?: string
-  }[],
+    name: string;
+    type: string;
+    isRequired?: boolean;
+    default?: string;
+    description?: string;
+  }[];
 }
 
 export const DetailTable = (info: ComponentDetail): JSX.Element => (
@@ -45,16 +47,14 @@ export const DetailTable = (info: ComponentDetail): JSX.Element => (
       <th>Default</th>
       <th>Description</th>
     </tr>
-    {
-      info.data.map((data) => (
-        <tr key={data.name}>
-          <td>{data.name}</td>
-          <td>{data.type}</td>
-          <td>{data.isRequired ? ' true ' : ' - '}</td>
-          <td>{data.default || '-'}</td>
-          <td>{data.description || '-'}</td>
-        </tr>
-      ))
-    }
+    {info.data.map((data) => (
+      <tr key={data.name}>
+        <td>{data.name}</td>
+        <td>{data.type}</td>
+        <td>{data.isRequired ? ' true ' : ' - '}</td>
+        <td>{data.default || '-'}</td>
+        <td>{data.description || '-'}</td>
+      </tr>
+    ))}
   </StyledTable>
 );

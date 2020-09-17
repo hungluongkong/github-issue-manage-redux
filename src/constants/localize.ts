@@ -1,4 +1,3 @@
-
 export const en = {
   FORM_TITLE: 'Title',
   FORM_CONTENT_TITLE: 'Content',

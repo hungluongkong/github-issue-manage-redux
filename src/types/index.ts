@@ -20,10 +20,10 @@ export enum InputType {
 }
 
 export interface ButtonProps {
-  type?: ButtonType,
-  size?: ButtonSize,
-  value: string,
-  onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void,
+  type?: ButtonType;
+  size?: ButtonSize;
+  value: string;
+  onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
 /* ---------------- Button end ---------------- */
@@ -31,23 +31,23 @@ export interface ButtonProps {
 /* ------------------- Input ------------------ */
 
 export interface InputProps {
-  defaultValue?: string,
-  placeholder?: string,
-  textRef?: React.RefObject<HTMLInputElement | HTMLTextAreaElement>,
-  isRequire?: boolean,
-  onChange?: (value: string) => void,
+  defaultValue?: string;
+  placeholder?: string;
+  textRef?: React.RefObject<HTMLInputElement | HTMLTextAreaElement>;
+  isRequire?: boolean;
+  onChange?: (value: string) => void;
 }
 
 /* ----------------- Input end ---------------- */
 
 /* ---------------- Input Group --------------- */
 export interface InputGroupProps {
-  label?: string,
-  defaultValue: string,
-  placeholder?: string,
-  textRef?: React.RefObject<HTMLInputElement | HTMLTextAreaElement>,
-  inputType?: InputType,
-  isRequire?: boolean,
+  label?: string;
+  defaultValue: string;
+  placeholder?: string;
+  textRef?: React.RefObject<HTMLInputElement | HTMLTextAreaElement>;
+  inputType?: InputType;
+  isRequire?: boolean;
 }
 
 /* -------------- Input Group end ------------- */
@@ -55,8 +55,8 @@ export interface InputGroupProps {
 /* ------------------- Form ------------------- */
 
 export interface IssueFormProps {
-  issue?: Issue,
-  onSubmit: (issue: Issue) => void,
+  issue?: Issue;
+  onSubmit: (issue: Issue) => void;
 }
 
 /* ----------------- Form end ----------------- */
@@ -69,10 +69,10 @@ export enum TaskReportType {
 }
 
 export interface TaskReportProps {
-  content: string,
-  date: Date,
-  timeoutMS?: number,
-  type?: TaskReportType,
+  content: string;
+  date: Date;
+  timeoutMS?: number;
+  type?: TaskReportType;
 }
 
 /* ----------------- Popup end ---------------- */
@@ -85,39 +85,39 @@ export interface TaskReportProps {
  * More: https://developer.github.com/v3/issues/#create-an-issue
  */
 export interface Issue {
-  id: number,
-  number: number,
-  url: string,
-  title: string,
-  body: string,
-  locked: boolean,
-  createdAt: Date,
-  updatedAt: Date,
+  id: number;
+  number: number;
+  url: string;
+  title: string;
+  body: string;
+  locked: boolean;
+  createdAt: Date;
+  updatedAt: Date;
 }
 
 export interface IssueProps {
-  issue: Issue,
-  onToggleContent: (issue: Issue) => void,
-  onToggleLock: (issue: Issue) => void,
+  issue: Issue;
+  onToggleContent: (issue: Issue) => void;
+  onToggleLock: (issue: Issue) => void;
 }
 
 export interface IssueListProps {
-  issues: Issue[],
-  loading?: boolean,
-  getIssues: () => void,
+  issues: Issue[];
+  loading?: boolean;
+  getIssues: () => void;
 
-  task?: string,
-  isShowForm: boolean,
-  lastTaskTime: Date,
-  toggleForm: (issue?: Issue) => void,
-  toggleIssue: (issue: Issue) => void,
-  toggleLockIssue: (issue: Issue) => void,
+  task?: string;
+  isShowForm: boolean;
+  lastTaskTime: Date;
+  toggleForm: (issue?: Issue) => void;
+  toggleIssue: (issue: Issue) => void;
+  toggleLockIssue: (issue: Issue) => void;
 }
 
 /* -------- Issue content display group ------- */
 
 export interface IssueContentProps {
-  issue: Issue,
+  issue: Issue;
   onEditPressed: () => void;
 }
 
@@ -126,47 +126,47 @@ export interface IssueContentProps {
 /* ------------ Reducers & actions ------------ */
 
 export interface IssueState {
-  issues: Issue[],
-  pending: boolean,
-  error: string,
-  task: string,
-  lastTaskTime: Date,
+  issues: Issue[];
+  pending: boolean;
+  error: string;
+  task: string;
+  lastTaskTime: Date;
 }
 
 export interface ActionPayload {
-  type: Action,
-  issues?: Issue[],
-  issue?: Issue,
-  error?: string,
-  msg?: string,
+  type: Action;
+  issues?: Issue[];
+  issue?: Issue;
+  error?: string;
+  msg?: string;
 }
 
 export interface AsideState {
-  isShowForm: boolean,
-  isShowIssue: boolean,
-  issue: Issue,
-  error: string,
+  isShowForm: boolean;
+  isShowIssue: boolean;
+  issue: Issue;
+  error: string;
 }
 
 export interface AsideActionPayload {
-  type: Action,
-  issue?: Issue,
-  error?: string,
+  type: Action;
+  issue?: Issue;
+  error?: string;
 }
 
 export interface RootReducerState {
-  issues: IssueState,
-  asideView: AsideState,
+  issues: IssueState;
+  asideView: AsideState;
 }
 /* -------------------- End ------------------- */
 
 /* ---------------- Aside View ---------------- */
 
 export interface AsideViewProps {
-  isShowIssue: boolean,
-  isShowForm: boolean,
-  issue: Issue,
-  updateIssue: (issue: Issue) => void,
-  toggleIssue: (issue: Issue) => void,
-  toggleForm: (issue: Issue) => void,
+  isShowIssue: boolean;
+  isShowForm: boolean;
+  issue: Issue;
+  updateIssue: (issue: Issue) => void;
+  toggleIssue: (issue: Issue) => void;
+  toggleForm: (issue: Issue) => void;
 }

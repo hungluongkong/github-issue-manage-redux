@@ -12,11 +12,7 @@ import { isEqualAllProps } from '../../helpers/propsHelper';
 import * as color from '../../theme/color';
 import * as metrics from '../../theme/metrics';
 import * as localize from '../../constants/localize';
-import {
-  Issue,
-  IssueListProps,
-  ButtonType,
-} from '../../types';
+import { Issue, IssueListProps, ButtonType } from '../../types';
 
 // Wrap all content
 const IssueListWrapper = styled.div`
@@ -58,7 +54,9 @@ const IssueList = ({
       />
       <Button
         type={ButtonType.Primary}
-        value={isShowForm ? localize.en.BTN_FORM_CLOSE : localize.en.BTN_ISSUE_ADD}
+        value={
+          isShowForm ? localize.en.BTN_FORM_CLOSE : localize.en.BTN_ISSUE_ADD
+        }
         onClick={() => {
           toggleForm();
         }}
@@ -67,25 +65,29 @@ const IssueList = ({
       <IssueListWrapper>
         {
           // If loading or Empty list
-          loading || issues.length === 0 ?
-            (
-              loading ? <LoadingBar /> : localize.en.ISSUE_LIST_NO_ISSUE
+          loading || issues.length === 0 ? (
+            loading ? (
+              <LoadingBar />
+            ) : (
+              localize.en.ISSUE_LIST_NO_ISSUE
             )
-            :
+          ) : (
             // List render
-            (
-              issues.map((issue: Issue): JSX.Element => (
+            issues.map(
+              (issue: Issue): JSX.Element => (
                 <IssueItem
                   key={issue.id}
                   issue={issue}
                   onToggleContent={toggleIssue}
                   onToggleLock={toggleLockIssue}
                 />
-              ))
+              ),
             )
+          )
         }
       </IssueListWrapper>
-    </ErrorBoundary>);
+    </ErrorBoundary>
+  );
 };
 
 export default React.memo(IssueList, isEqualAllProps);

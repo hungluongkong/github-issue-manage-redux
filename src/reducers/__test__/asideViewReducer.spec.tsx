@@ -14,14 +14,12 @@ describe('Unit test for initial reducer', () => {
   });
 
   it('should handle TOGGLE_FORM action', () => {
-    expect(asideReducer(defaultState, AsideAction.toggleForm())).toEqual(
-      {
-        ...defaultState,
-        isShowIssue: false,
-        isShowForm: true,
-        error: '',
-      },
-    );
+    expect(asideReducer(defaultState, AsideAction.toggleForm())).toEqual({
+      ...defaultState,
+      isShowIssue: false,
+      isShowForm: true,
+      error: '',
+    });
   });
 
   it('should handle TOGGLE_ISSUE action', () => {
@@ -34,25 +32,23 @@ describe('Unit test for initial reducer', () => {
       issue,
     };
 
-    expect(asideReducer(defaultState, AsideAction.toggleIssue(issue))).toEqual(nextState);
+    expect(asideReducer(defaultState, AsideAction.toggleIssue(issue))).toEqual(
+      nextState,
+    );
 
     // Toggle again
-    expect(asideReducer(nextState, AsideAction.toggleIssue(issue))).toEqual(
-      {
-        ...nextState,
-        isShowIssue: false,
-      },
-    );
+    expect(asideReducer(nextState, AsideAction.toggleIssue(issue))).toEqual({
+      ...nextState,
+      isShowIssue: false,
+    });
   });
 
   it('should handle TOGGLE_ERROR action', () => {
     // Need use true data
     const error: string = 'some error';
-    expect(asideReducer(defaultState, AsideAction.handleError(error))).toEqual(
-      {
-        ...defaultState,
-        error,
-      },
-    );
+    expect(asideReducer(defaultState, AsideAction.handleError(error))).toEqual({
+      ...defaultState,
+      error,
+    });
   });
 });

@@ -23,7 +23,9 @@ describe('Unit test for AsideView component', () => {
   };
 
   it('snapshot', () => {
-    const asideView = create(<AsideView {...{...defaultProps, isShowIssue: true}} />);
+    const asideView = create(
+      <AsideView {...{ ...defaultProps, isShowIssue: true }} />,
+    );
     expect(asideView).toMatchSnapshot();
   });
 
@@ -33,12 +35,16 @@ describe('Unit test for AsideView component', () => {
   });
 
   it('should show form', () => {
-    const asideView = shallow(<AsideView {...{...defaultProps, isShowForm: true}} />);
+    const asideView = shallow(
+      <AsideView {...{ ...defaultProps, isShowForm: true }} />,
+    );
     expect(asideView.find(IssueForm).exists()).toEqual(true);
   });
 
   it('should show issue content', () => {
-    const asideView = shallow(<AsideView {...{...defaultProps, isShowIssue: true}} />);
+    const asideView = shallow(
+      <AsideView {...{ ...defaultProps, isShowIssue: true }} />,
+    );
     expect(asideView.find(IssueContent).exists()).toEqual(true);
   });
 });

@@ -10,6 +10,9 @@ const api = create({
   },
 });
 
-api.setHeader('Authorization', `Bearer ${process.env.REACT_APP_GITHUB_AUTH_TOKEN}`);
+api.setHeader(
+  'Authorization',
+  `Bearer ${process.env.REACT_APP_GITHUB_AUTH_TOKEN}`,
+);
 
 export default api;

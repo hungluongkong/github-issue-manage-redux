@@ -17,7 +17,7 @@ const InputGroupWrapper = styled.div`
   align-items: center;
 `;
 
-const InputWrapper = styled.div<{isTextArea: boolean}>`
+const InputWrapper = styled.div<{ isTextArea: boolean }>`
   min-height: ${(props) => (props.isTextArea ? 200 : 0)}px;
   flex-grow: 1;
   line-height: 20px;
@@ -36,7 +36,7 @@ const InputGroup = ({
 
   return (
     <InputGroupWrapper>
-      { label && <Label>{label}</Label> }
+      {label && <Label>{label}</Label>}
       <InputWrapper isTextArea={inputType === InputType.TextArea}>
         <InputElement
           textRef={textRef}

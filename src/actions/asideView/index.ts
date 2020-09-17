@@ -3,7 +3,7 @@ import { AsideActionPayload, Issue } from '../../types';
 
 export const toggleForm = (issue?: Issue): AsideActionPayload => ({
   type: Action.TOGGLE_FORM,
-  issue: issue || {} as Issue,
+  issue: issue || ({} as Issue),
 });
 
 export const toggleIssue = (issue: Issue): AsideActionPayload => ({

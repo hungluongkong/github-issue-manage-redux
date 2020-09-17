@@ -11,7 +11,10 @@ const propsDetail: JSX.Element = DetailTable({
     { name: 'defaultValue', type: 'string' },
     { name: 'placeholder', type: 'string' },
     { name: 'isRequire', type: 'boolean', default: 'false' },
-    { name: 'textRef', type: 'React.RefObject<HTMLInputElement | HTMLTextAreaElement>' },
+    {
+      name: 'textRef',
+      type: 'React.RefObject<HTMLInputElement | HTMLTextAreaElement>',
+    },
   ],
 });
 

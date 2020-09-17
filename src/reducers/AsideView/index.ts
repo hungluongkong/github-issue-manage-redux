@@ -1,9 +1,5 @@
 import Action from '../../constants/actions';
-import {
-  Issue,
-  AsideState,
-  AsideActionPayload,
-} from '../../types';
+import { Issue, AsideState, AsideActionPayload } from '../../types';
 
 export const defaultState: AsideState = {
   isShowForm: false,
@@ -22,7 +18,7 @@ const asideReducer = (
         ...state,
         isShowIssue: false,
         isShowForm: !state.isShowForm,
-        issue: action.issue || {} as Issue,
+        issue: action.issue || ({} as Issue),
       };
 
     case Action.TOGGLE_ISSUE:
@@ -30,7 +26,7 @@ const asideReducer = (
         ...state,
         isShowForm: false,
         isShowIssue: action.issue?.id !== state.issue.id || !state.isShowIssue,
-        issue: action.issue || {} as Issue,
+        issue: action.issue || ({} as Issue),
       };
 
     case Action.TOGGLE_ERROR:

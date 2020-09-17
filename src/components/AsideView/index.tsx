@@ -16,15 +16,15 @@ const AsideView = ({
   updateIssue,
   toggleIssue,
   toggleForm,
-}: AsideViewProps) => (
+}: AsideViewProps) =>
   // Only show if it have show form or issue content
-  isShowIssue || isShowForm ?
+  isShowIssue || isShowForm ? (
     <IssueViewWrapper>
       {
-      // Show form (Edit)
-        isShowIssue ?
-          (
-            issue && issue.id &&
+        // Show form (Edit)
+        isShowIssue ? (
+          issue &&
+          issue.id && (
             <IssueContent
               issue={issue}
               onEditPressed={() => {
@@ -32,21 +32,20 @@ const AsideView = ({
               }}
             />
           )
-          :
-          (
-            <IssueForm
-              issue={issue}
-              onSubmit={(issue: Issue) => {
-                updateIssue(issue);
-                toggleIssue(issue);
-              }}
-            />
-          )
+        ) : (
+          <IssueForm
+            issue={issue}
+            onSubmit={(issue: Issue) => {
+              updateIssue(issue);
+              toggleIssue(issue);
+            }}
+          />
+        )
       }
     </IssueViewWrapper>
-    :
+  ) : (
     // Show nothing
-    <React.Fragment />
-);
+    <></>
+  );
 
 export default React.memo(AsideView, isEqualAllProps);

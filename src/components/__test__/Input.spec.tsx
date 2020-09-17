@@ -12,7 +12,9 @@ describe('Unit test for Input component', () => {
   it('render Default value', () => {
     const defaultValue = 'Test text';
     const placeholderText = 'Place holder text';
-    const input = shallow(<Input defaultValue={defaultValue} placeholder={placeholderText} />);
+    const input = shallow(
+      <Input defaultValue={defaultValue} placeholder={placeholderText} />,
+    );
     expect(input.prop('defaultValue')).toEqual(defaultValue);
     expect(input.prop('placeholder')).toEqual(placeholderText);
   });
@@ -22,7 +24,9 @@ describe('Unit test for Input component', () => {
     const newValue = 'Changed text';
     const onChange = jest.fn();
 
-    const input = mount(<Input defaultValue={defaultValue} onChange={onChange} />);
+    const input = mount(
+      <Input defaultValue={defaultValue} onChange={onChange} />,
+    );
 
     input.simulate('change', { target: { value: newValue } });
 

@@ -17,12 +17,15 @@ const Wrapper = styled.div<{ type: TaskReportType }>`
   border: 1px solid ${color.POPUP_BORDER_COLOR};
   width: 500px;
   outline: 0;
-  background: ${(props) => (props.type === TaskReportType.Success ? color.POPUP_BG_COLOR_SUCCESS : color.POPUP_BG_COLOR_WARNING)};
+  background: ${(props) =>
+    props.type === TaskReportType.Success
+      ? color.POPUP_BG_COLOR_SUCCESS
+      : color.POPUP_BG_COLOR_WARNING};
 `;
 
 const PopupBody = styled.p`
-  overflow:hidden;
-  text-overflow:ellipsis;
+  overflow: hidden;
+  text-overflow: ellipsis;
   padding: 5px 10px;
 `;
 
@@ -44,7 +47,10 @@ const TaskReporter = ({
   }, [timeoutMS, date]);
 
   return (
-    <Wrapper type={type} style={{ visibility: isVisible && content ? 'visible' : 'hidden'}}>
+    <Wrapper
+      type={type}
+      style={{ visibility: isVisible && content ? 'visible' : 'hidden' }}
+    >
       <PopupBody>{content}</PopupBody>
     </Wrapper>
   );

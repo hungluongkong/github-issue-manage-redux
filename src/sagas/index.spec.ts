@@ -35,23 +35,25 @@ describe('SAGAS', () => {
 
   it('should dispatch action TOGGLE_LOCK_ISSUE', () => {
     const generator = toggleIssueSaga();
-    expect(generator.next().value)
-      .toEqual(takeEvery('TOGGLE_LOCK_ISSUE', handleToggleIssue));
+    expect(generator.next().value).toEqual(
+      takeEvery('TOGGLE_LOCK_ISSUE', handleToggleIssue),
+    );
     expect(generator.next().done).toBeTruthy();
   });
 
   it('should dispatch action GET_ISSUES', () => {
     const generator = fetchIssuesSaga();
-    expect(generator.next().value)
-      .toEqual(takeEvery('GET_ISSUES', fetchIssuesHandler));
+    expect(generator.next().value).toEqual(
+      takeEvery('GET_ISSUES', fetchIssuesHandler),
+    );
     expect(generator.next().done).toBeTruthy();
   });
 
-
   it('should dispatch action UPDATE_ISSUE', () => {
     const generator = updateIssueSaga();
-    expect(generator.next().value)
-      .toEqual(takeEvery('UPDATE_ISSUE', handleIssueUpdate));
+    expect(generator.next().value).toEqual(
+      takeEvery('UPDATE_ISSUE', handleIssueUpdate),
+    );
     expect(generator.next().done).toBeTruthy();
   });
 
@@ -60,8 +62,9 @@ describe('SAGAS', () => {
     const generator = fetchIssuesHandler();
     generator.next();
 
-    expect(generator.next(mockResponse).value)
-      .toEqual(put(getIssueSuccess(issues)));
+    expect(generator.next(mockResponse).value).toEqual(
+      put(getIssueSuccess(issues)),
+    );
 
     expect(generator.next().done).toBeTruthy();
   });
@@ -77,8 +80,9 @@ describe('SAGAS', () => {
       status: ResponseCode.NOT_FOUND,
     };
 
-    expect(generator.next(errorResponse).value)
-      .toEqual(put(getIssueError(error)));
+    expect(generator.next(errorResponse).value).toEqual(
+      put(getIssueError(error)),
+    );
 
     expect(generator.next().done).toBeTruthy();
   });
@@ -96,8 +100,9 @@ describe('SAGAS', () => {
       data: JSON.parse(issueJson),
     };
 
-    expect(generator.next(errorResponse).value)
-      .toEqual(put(updateIssueSuccess(issue)));
+    expect(generator.next(errorResponse).value).toEqual(
+      put(updateIssueSuccess(issue)),
+    );
 
     expect(generator.next().done).toBeTruthy();
   });
@@ -116,8 +121,9 @@ describe('SAGAS', () => {
       data: { message: error },
     };
 
-    expect(generator.next(errorResponse).value)
-      .toEqual(put(getIssueError(error)));
+    expect(generator.next(errorResponse).value).toEqual(
+      put(getIssueError(error)),
+    );
 
     expect(generator.next().done).toBeTruthy();
   });
@@ -135,8 +141,9 @@ describe('SAGAS', () => {
       data: JSON.parse(issueJson),
     };
 
-    expect(generator.next(errorResponse).value)
-      .toEqual(put(updateIssueSuccess({...issue, locked: !issue.locked})));
+    expect(generator.next(errorResponse).value).toEqual(
+      put(updateIssueSuccess({ ...issue, locked: !issue.locked })),
+    );
 
     expect(generator.next().done).toBeTruthy();
   });
@@ -155,8 +162,9 @@ describe('SAGAS', () => {
       data: { message: error },
     };
 
-    expect(generator.next(errorResponse).value)
-      .toEqual(put(getIssueError(error)));
+    expect(generator.next(errorResponse).value).toEqual(
+      put(getIssueError(error)),
+    );
 
     expect(generator.next().done).toBeTruthy();
   });

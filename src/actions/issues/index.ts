@@ -1,6 +1,6 @@
 import Action from '../../constants/actions';
 import { ActionPayload, Issue } from '../../types';
-import * as localize from './../../constants/localize';
+import * as localize from '../../constants/localize';
 
 export const getIssues = (): ActionPayload => ({
   type: Action.GET_ISSUES,

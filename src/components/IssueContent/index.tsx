@@ -37,14 +37,11 @@ const IssueContentFooter = styled.div`
   justify-content: flex-end;
 `;
 
-const IssueContent = ({
-  issue,
-  onEditPressed,
-}: IssueContentProps) => (
-  issue.id ?
+const IssueContent = ({ issue, onEditPressed }: IssueContentProps) =>
+  issue.id ? (
     <ContentContainer>
       <Title>{issue.title}</Title>
-      <IssueContentBody dangerouslySetInnerHTML={{__html: (issue.body)}} />
+      <IssueContentBody dangerouslySetInnerHTML={{ __html: issue.body }} />
       <IssueContentFooter>
         <Button
           type={ButtonType.Default}
@@ -53,9 +50,9 @@ const IssueContent = ({
         />
       </IssueContentFooter>
     </ContentContainer>
-    :
+  ) : (
     // Render nothing
-    <React.Fragment />
-);
+    <></>
+  );
 
 export default IssueContent;

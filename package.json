@@ -32,7 +32,10 @@
     "test:coverage": "jest --coverage",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 9009 -s public",
-    "build-storybook": "cp -f ./tsconfig.storybook.json ./tsconfig.json && build-storybook -s public"
+    "build-storybook": "cp -f ./tsconfig.storybook.json ./tsconfig.json && build-storybook -s public",
+    "prettier": "prettier --write src/**/*.{ts,tsx,scss}",
+    "prettier:check": "prettier --list-different src/**/*.{ts,tsx,scss}",
+    "lint": "eslint '*/**/*.{js,ts,tsx}' --quiet --fix"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -83,10 +86,17 @@
     "enzyme-adapter-react-16": "^1.15.3",
     "enzyme-to-json": "^3.5.0",
     "eslint": "^6.6.0",
-    "eslint-plugin-react": "^7.20.3",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "^7.20.6",
+    "eslint-plugin-react-hooks": "^4.1.0",
     "jest": "^26.3.0",
     "jest-styled-components": "^7.0.2",
     "jsdom-global": "3.0.2",
+    "prettier": "^2.1.1",
     "react-test-renderer": "^16.13.1",
     "react-testing-library": "^8.0.1",
     "redux-logger": "^3.0.6",

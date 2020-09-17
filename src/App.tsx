@@ -26,5 +26,4 @@ const App: React.SFC<{}> = () => (
   </ErrorBoundary>
 );
 
-
 export default App;

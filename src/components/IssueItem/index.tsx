@@ -6,18 +6,16 @@ import * as color from '../../theme/color';
 import * as metrics from '../../theme/metrics';
 import * as localize from '../../constants/localize';
 import { isEqualAllProps } from '../../helpers/propsHelper';
-import {
-  IssueProps,
-  ButtonType,
-} from '../../types';
+import { IssueProps, ButtonType } from '../../types';
 
 // Main container
-const IssueWrapper = styled.div<{isLocked: boolean}>`
+const IssueWrapper = styled.div<{ isLocked: boolean }>`
   display: flex;
   box-sizing: border-box;
   padding: 5px;
   justify-content: space-between;
-  background: ${(props) => (props.isLocked ? color.ISSUE_BG_LOCKED : color.ISSUE_BG_DEFAULT)};
+  background: ${(props) =>
+    props.isLocked ? color.ISSUE_BG_LOCKED : color.ISSUE_BG_DEFAULT};
 
   :hover {
     opacity: ${metrics.OPACITY.hover};
@@ -72,25 +70,32 @@ const IssueItem = ({
     <IssueID>#{issue.number}</IssueID>
 
     {/* Body of issue item */}
-    <TitleWrapper onClick={() => { onToggleContent(issue); }}>
+    <TitleWrapper
+      onClick={() => {
+        onToggleContent(issue);
+      }}
+    >
       <IssueTitle>{issue.title}</IssueTitle>
       <EditTime>
         {
           // Compare edit/create timestamp
-          new Date(issue.createdAt).getTime() === new Date(issue.updatedAt).getTime()
+          new Date(issue.createdAt).getTime() ===
+          new Date(issue.updatedAt).getTime()
             ? localize.en.ISSUE_CREATED_AT
             : localize.en.ISSUE_UPDATED_AT
         }
-        { new Date(issue.updatedAt).toLocaleDateString() }
+        {new Date(issue.updatedAt).toLocaleDateString()}
       </EditTime>
     </TitleWrapper>
-    {
-      <Button
-        type={issue.locked ? ButtonType.Primary : ButtonType.Default}
-        onClick={() => { onToggleLock(issue); }}
-        value={issue.locked ? localize.en.BTN_ISSUE_UNLOCK : localize.en.BTN_ISSUE_LOCK}
-      />
-    }
+    <Button
+      type={issue.locked ? ButtonType.Primary : ButtonType.Default}
+      onClick={() => {
+        onToggleLock(issue);
+      }}
+      value={
+        issue.locked ? localize.en.BTN_ISSUE_UNLOCK : localize.en.BTN_ISSUE_LOCK
+      }
+    />
   </IssueWrapper>
 );
 

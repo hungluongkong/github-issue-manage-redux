@@ -10,7 +10,7 @@ describe('props Helper test', () => {
       string: 'abc',
     };
 
-    const otherState = {...someState, name: 'Alisa'};
+    const otherState = { ...someState, name: 'Alisa' };
 
     expect(isEqualAllProps(someState, someState)).toEqual(true);
     expect(isEqualAllProps(someState, otherState)).toEqual(false);

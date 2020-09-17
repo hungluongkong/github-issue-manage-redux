@@ -3,10 +3,7 @@ import { shallow } from 'enzyme';
 import { create } from 'react-test-renderer';
 
 import Button from '../Button';
-import IssueItem, {
-  TitleWrapper,
-  IssueTitle,
-} from '../IssueItem';
+import IssueItem, { TitleWrapper, IssueTitle } from '../IssueItem';
 
 import { JsonToIssueList } from '../../helpers/jsonHelper';
 import { issueListJson } from '../../constants/storiesTempData';

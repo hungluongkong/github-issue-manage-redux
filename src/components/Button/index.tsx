@@ -3,45 +3,38 @@ import styled from 'styled-components';
 
 import * as color from '../../theme/color';
 import * as metrics from '../../theme/metrics';
-import {
-  ButtonType,
-  ButtonProps,
-  ButtonSize,
-} from '../../types';
+import { ButtonType, ButtonProps, ButtonSize } from '../../types';
 
 /**
  * Get css style for each type of button.
  * @param type type of button (enum)
  */
-const typeToColor = (type: ButtonType): string => (
-  type === ButtonType.Primary ?
-    `
+const typeToColor = (type: ButtonType): string =>
+  type === ButtonType.Primary
+    ? `
       background: ${color.PRIMARY_COLOR};
       color: ${color.DEFAULT_COLOR};
     `
-    :
-    `
+    : `
       background: ${color.DEFAULT_COLOR};
       color: ${color.PRIMARY_COLOR};
-    `
-);
+    `;
 
 /**
  * Styling button by buttonSize
  * @param bSize size of button (enum)
  */
-const sizeToSize = (bSize: ButtonSize): string => (
-  bSize === ButtonSize.Small ?
-    `
+const sizeToSize = (bSize: ButtonSize): string =>
+  bSize === ButtonSize.Small
+    ? `
       line-height: ${metrics.ButtonSizing.small.lineHeight};
       padding: 3px 5px;
       font-size: ${metrics.FontSize.Small};
     `
-    // Style normal button here
-    : ''
-);
+    : // Style normal button here
+      '';
 
-const StyledButton = styled.button<{bType: ButtonType, size: ButtonSize}>`
+const StyledButton = styled.button<{ bType: ButtonType; size: ButtonSize }>`
   display: inline-block;
   min-width: 101px;
   text-align: center;
@@ -58,8 +51,8 @@ const StyledButton = styled.button<{bType: ButtonType, size: ButtonSize}>`
     cursor: pointer;
   }
 
-  ${(props: {bType: ButtonType}): string => typeToColor(props.bType)}
-  ${(props: {size: ButtonSize}): string => sizeToSize(props.size)}
+  ${(props: { bType: ButtonType }): string => typeToColor(props.bType)}
+  ${(props: { size: ButtonSize }): string => sizeToSize(props.size)}
 `;
 
 const Button = ({
@@ -69,7 +62,7 @@ const Button = ({
   onClick = () => {},
 }: ButtonProps): JSX.Element => (
   <StyledButton
-    {...{size, onClick}}
+    {...{ size, onClick }}
     // bType: button type
     bType={type}
   >

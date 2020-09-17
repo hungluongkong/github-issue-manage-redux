@@ -1,4 +1,3 @@
-
 export const isEqualAllProps = <TInterface extends Object>(
   prevProps: TInterface,
   nextProps: TInterface,

@@ -28,7 +28,9 @@ const TextArea = ({
 }: InputProps): JSX.Element => (
   <StyledTextArea
     ref={textRef as React.RefObject<HTMLTextAreaElement>}
-    onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => onChange(e.target.value)}
+    onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) =>
+      onChange(e.target.value)
+    }
     defaultValue={defaultValue}
     required={isRequire}
   />

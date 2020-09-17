@@ -1,9 +1,5 @@
 import Action from '../../constants/actions';
-import {
-  Issue,
-  IssueState,
-  ActionPayload,
-} from '../../types';
+import { Issue, IssueState, ActionPayload } from '../../types';
 
 export const defaultState: IssueState = {
   issues: [],
@@ -31,14 +27,19 @@ const issuesReducer = (
 
     case Action.UPDATE_ISSUE_SUCCESS:
       if (action.issue) {
-        const index = state.issues.findIndex((issue: Issue) => issue.id === action.issue?.id);
+        const index = state.issues.findIndex(
+          (issue: Issue) => issue.id === action.issue?.id,
+        );
 
         const tempArr: Issue[] = [];
         tempArr[index] = action.issue;
         // Add issue
         return {
           ...state,
-          issues: index === -1 ? [...state.issues, action.issue] : Object.assign([...state.issues], tempArr),
+          issues:
+            index === -1
+              ? [...state.issues, action.issue]
+              : Object.assign([...state.issues], tempArr),
           task: action.msg || '',
           lastTaskTime: new Date(),
           pending: false,

@@ -21,22 +21,31 @@ const PopupWrapper = styled.div`
   }
 `;
 
-storiesOf('Task Reporter', module)
-  .add('Task Reporter Types', () => (
-    <>
-      <h3>Task Reporter Types</h3>
-      <PreviewArea >
-        <PopupWrapper>
-          <TaskReporter type={TaskReportType.Success} content="Success! Hide After 2 seconds" timeoutMS={2000} date={new Date()} />
-          <TaskReporter type={TaskReportType.Warning} content="Warning! Hide after 1 second" timeoutMS={1000} date={new Date()} />
-        </PopupWrapper>
-      </PreviewArea>
-      <Code>
-        {`
+storiesOf('Task Reporter', module).add('Task Reporter Types', () => (
+  <>
+    <h3>Task Reporter Types</h3>
+    <PreviewArea>
+      <PopupWrapper>
+        <TaskReporter
+          type={TaskReportType.Success}
+          content="Success! Hide After 2 seconds"
+          timeoutMS={2000}
+          date={new Date()}
+        />
+        <TaskReporter
+          type={TaskReportType.Warning}
+          content="Warning! Hide after 1 second"
+          timeoutMS={1000}
+          date={new Date()}
+        />
+      </PopupWrapper>
+    </PreviewArea>
+    <Code>
+      {`
           <TaskReporter type={TaskReportType.Success} content="Success! Hide After 2 seconds" timeoutMS={2000} date={new Date()} />
           <TaskReporter type={TaskReportType.Warning} content="Warning! Hide after 1 second" timeoutMS={1000} date={new Date()} />
         `}
-      </Code>
-      {propsDetail}
-    </>
-  ));
+    </Code>
+    {propsDetail}
+  </>
+));

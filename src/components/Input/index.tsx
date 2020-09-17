@@ -30,7 +30,9 @@ const Input = ({
     placeholder={placeholder}
     defaultValue={defaultValue}
     ref={textRef as React.RefObject<HTMLInputElement>}
-    onChange={(e: React.ChangeEvent<HTMLInputElement>) => onChange(e.target.value)}
+    onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+      onChange(e.target.value)
+    }
     required={isRequire}
   />
 );

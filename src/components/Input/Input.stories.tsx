@@ -13,18 +13,17 @@ const propsDetail: JSX.Element = DetailTable({
   ],
 });
 
-storiesOf('Input', module)
-  .add('Default', () => (
-    <>
-      <h3>Default Input</h3>
-      <PreviewArea>
-        <Input defaultValue="Text" placeholder="Input here" />
-      </PreviewArea>
-      <Code>
-        {`
+storiesOf('Input', module).add('Default', () => (
+  <>
+    <h3>Default Input</h3>
+    <PreviewArea>
+      <Input defaultValue="Text" placeholder="Input here" />
+    </PreviewArea>
+    <Code>
+      {`
           <Input defaultValue="Text" placeholder="Input here" />
         `}
-      </Code>
-      {propsDetail}
-    </>
-  ));
+    </Code>
+    {propsDetail}
+  </>
+));

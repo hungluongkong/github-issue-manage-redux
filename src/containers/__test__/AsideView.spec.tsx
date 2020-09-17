@@ -10,11 +10,7 @@ import { updateIssue } from '../../actions/issues';
 
 import { JsonToIssueList } from '../../helpers/jsonHelper';
 import { issueListJson } from '../../constants/storiesTempData';
-import {
-  RootReducerState,
-  Issue,
-  IssueState,
-} from '../../types';
+import { RootReducerState, Issue, IssueState } from '../../types';
 
 describe('Unit test for Form container', () => {
   const issues: Issue[] = JsonToIssueList(issueListJson);
@@ -69,7 +65,7 @@ describe('Unit test for Form container', () => {
   it('should dispatch update & toggle issue action', () => {
     const store = mockStore({
       issues: issueState,
-      asideView: {...asideViewState, isShowForm: true, isShowIssue: false},
+      asideView: { ...asideViewState, isShowForm: true, isShowIssue: false },
     } as RootReducerState);
 
     const wrapper = mount(
@@ -79,6 +75,9 @@ describe('Unit test for Form container', () => {
     );
 
     wrapper.find(Button).at(0).simulate('click');
-    expect(store.getActions()).toEqual([updateIssue(issues[0]), toggleIssue(issues[0])]);
+    expect(store.getActions()).toEqual([
+      updateIssue(issues[0]),
+      toggleIssue(issues[0]),
+    ]);
   });
 });

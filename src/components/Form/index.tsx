@@ -5,12 +5,7 @@ import Button from '../Button';
 import InputGroup from '../InputGroup';
 import * as localize from '../../constants/localize';
 
-import {
-  Issue,
-  ButtonType,
-  InputType,
-  IssueFormProps,
-} from '../../types';
+import { Issue, ButtonType, InputType, IssueFormProps } from '../../types';
 
 const StyledForm = styled.div`
   display: flex;
@@ -37,13 +32,11 @@ const IssueForm = ({
       return;
     }
 
-    onSubmit(
-      {
-        ...issue,
-        title: titleRef.current?.value,
-        body: textAreaRef.current?.value || '',
-      } as Issue,
-    );
+    onSubmit({
+      ...issue,
+      title: titleRef.current?.value,
+      body: textAreaRef.current?.value || '',
+    } as Issue);
   };
 
   return (
@@ -61,7 +54,11 @@ const IssueForm = ({
         placeholder={localize.en.FORM_CONTENT_PLACEHOLDER}
         inputType={InputType.TextArea}
       />
-      <Button type={ButtonType.Primary} onClick={onSubmitEvent} value={localize.en.BTN_SUBMIT} />
+      <Button
+        type={ButtonType.Primary}
+        onClick={onSubmitEvent}
+        value={localize.en.BTN_SUBMIT}
+      />
     </StyledForm>
   );
 };

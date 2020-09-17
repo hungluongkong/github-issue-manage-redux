@@ -20,7 +20,9 @@ describe('Unit test for TextArea component', () => {
     const newValue = 'Changed text';
     const onChange = jest.fn();
 
-    const input = mount(<TextArea defaultValue={defaultValue} onChange={onChange} />);
+    const input = mount(
+      <TextArea defaultValue={defaultValue} onChange={onChange} />,
+    );
 
     input.simulate('change', { target: { value: newValue } });
 

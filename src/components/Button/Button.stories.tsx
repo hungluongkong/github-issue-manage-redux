@@ -9,10 +9,23 @@ import { ButtonType, ButtonSize } from '../../types';
 // Detail of props
 const propsDetail: JSX.Element = DetailTable({
   data: [
-    { name: 'type', type: 'enum ButtonType { Default, Primary }', default: 'ButtonType.Primary' },
-    { name: 'size', type: 'enum ButtonSize { Small, Normal }', default: 'ButtonSize.Normal' },
+    {
+      name: 'type',
+      type: 'enum ButtonType { Default, Primary }',
+      default: 'ButtonType.Primary',
+    },
+    {
+      name: 'size',
+      type: 'enum ButtonSize { Small, Normal }',
+      default: 'ButtonSize.Normal',
+    },
     { name: 'value', type: 'string', default: 'ButtonType.Primary' },
-    { name: 'onClicked', type: 'function', description: '((event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void)' },
+    {
+      name: 'onClicked',
+      type: 'function',
+      description:
+        '((event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void)',
+    },
   ],
 });
 
@@ -22,8 +35,16 @@ storiesOf('Button', module)
     <>
       <h3>Button Types</h3>
       <PreviewArea>
-        <Button type={ButtonType.Primary} onClick={action('click')} value="Primary Button" />
-        <Button type={ButtonType.Default} onClick={action('click')} value="Default Button" />
+        <Button
+          type={ButtonType.Primary}
+          onClick={action('click')}
+          value="Primary Button"
+        />
+        <Button
+          type={ButtonType.Default}
+          onClick={action('click')}
+          value="Default Button"
+        />
       </PreviewArea>
       <Code>
         {`
@@ -38,8 +59,16 @@ storiesOf('Button', module)
     <>
       <h3>Button Size</h3>
       <PreviewArea>
-        <Button onClick={action('click')} size={ButtonSize.Normal} value="Normal Button" />
-        <Button onClick={action('click')} size={ButtonSize.Small} value="Small Button" />
+        <Button
+          onClick={action('click')}
+          size={ButtonSize.Normal}
+          value="Normal Button"
+        />
+        <Button
+          onClick={action('click')}
+          size={ButtonSize.Small}
+          value="Small Button"
+        />
       </PreviewArea>
       <Code>
         {`

@@ -35,7 +35,9 @@ describe('Unit test for IssueList component', () => {
   });
 
   it('should display loading', () => {
-    const issueList = shallow(<IssueList {...{...defaultProps, loading: true}} />);
+    const issueList = shallow(
+      <IssueList {...{ ...defaultProps, loading: true }} />,
+    );
     expect(issueList.find(LoadingBar).exists()).toEqual(true);
   });
 });
