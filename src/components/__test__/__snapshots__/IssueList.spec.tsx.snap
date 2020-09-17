@@ -1,0 +1,103 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Unit test for IssueList component snapshot 1`] = `
+Array [
+  <div
+    className="sc-fzozJi jRiTbz"
+    style={
+      Object {
+        "visibility": "hidden",
+      }
+    }
+    type={0}
+  >
+    <p
+      className="sc-fzoLsD fEbxod"
+    >
+      
+    </p>
+  </div>,
+  <button
+    className="sc-AxjAm caeeVY"
+    onClick={[Function]}
+    size={1}
+  >
+    New Issue
+  </button>,
+  <div
+    className="sc-fzplWN vdWWO"
+  >
+    Issues
+  </div>,
+  <div
+    className="sc-fzpans hbgWpR"
+  >
+    <div
+      className="sc-AxirZ bggFi"
+    >
+      <div
+        className="sc-AxiKw cEQHGP"
+      >
+        #
+        1
+      </div>
+      <div
+        className="sc-AxhCb bREgZd"
+        onClick={[Function]}
+      >
+        <a
+          className="sc-AxhUy ogOxz"
+        >
+          isssue no 1
+        </a>
+        <span
+          className="sc-AxgMl gaiwNa"
+        >
+          Created at 
+          7/9/2020
+        </span>
+      </div>
+      <button
+        className="sc-AxjAm gZMYpY"
+        onClick={[Function]}
+        size={1}
+      >
+        Lock Issue
+      </button>
+    </div>
+    <div
+      className="sc-AxirZ bggFi"
+    >
+      <div
+        className="sc-AxiKw cEQHGP"
+      >
+        #
+        2
+      </div>
+      <div
+        className="sc-AxhCb bREgZd"
+        onClick={[Function]}
+      >
+        <a
+          className="sc-AxhUy ogOxz"
+        >
+          #practice #make #api
+        </a>
+        <span
+          className="sc-AxgMl gaiwNa"
+        >
+          Created at 
+          7/10/2020
+        </span>
+      </div>
+      <button
+        className="sc-AxjAm gZMYpY"
+        onClick={[Function]}
+        size={1}
+      >
+        Lock Issue
+      </button>
+    </div>
+  </div>,
+]
+`;

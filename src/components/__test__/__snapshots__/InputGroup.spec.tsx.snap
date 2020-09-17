@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Unit test for Input component snapshot 1`] = `
+<div
+  className="sc-AxhCb dtChlF"
+>
+  
+  <div
+    className="sc-AxhUy eURWlK"
+  >
+    <input
+      className="sc-AxirZ cBNEtA"
+      defaultValue="text"
+      onChange={[Function]}
+      placeholder=""
+      required={false}
+    />
+  </div>
+</div>
+`;

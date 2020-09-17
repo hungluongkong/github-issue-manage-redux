@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Unit test for LoadingBar component snapshot 1`] = `
+<div
+  className="sc-AxjAm jWlVxK"
+>
+  <div
+    className="sc-AxirZ ghRTLL"
+  >
+    <div
+      className="sc-AxiKw eoswRd"
+    />
+    <div
+      className="sc-AxiKw eoswRd"
+    />
+    <div
+      className="sc-AxiKw eoswRd"
+    />
+  </div>
+</div>
+`;

@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Unit test for AsideView component snapshot 1`] = `
+<div
+  className="sc-fzpans eyWCTA"
+>
+  <div
+    className="sc-AxirZ bNsBBv"
+  >
+    <div
+      className="sc-AxiKw jBSfnA"
+    >
+      isssue no 1
+    </div>
+    <div
+      className="sc-AxhCb hGUfeO"
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "Nothing inside issue",
+        }
+      }
+    />
+    <div
+      className="sc-AxhUy gPNCHG"
+    >
+      <button
+        className="sc-AxjAm gZMYpY"
+        onClick={[Function]}
+        size={1}
+      >
+        Edit
+      </button>
+    </div>
+  </div>
+</div>
+`;

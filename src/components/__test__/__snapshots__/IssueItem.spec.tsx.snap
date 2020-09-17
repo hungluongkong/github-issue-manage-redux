@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Unit test for IssueItem component snapshot 1`] = `
+<div
+  className="sc-AxirZ bggFi"
+>
+  <div
+    className="sc-AxiKw cEQHGP"
+  >
+    #
+    1
+  </div>
+  <div
+    className="sc-AxhCb bREgZd"
+    onClick={[Function]}
+  >
+    <a
+      className="sc-AxhUy ogOxz"
+    >
+      isssue no 1
+    </a>
+    <span
+      className="sc-AxgMl gaiwNa"
+    >
+      Created at 
+      7/9/2020
+    </span>
+  </div>
+  <button
+    className="sc-AxjAm gZMYpY"
+    onClick={[Function]}
+    size={1}
+  >
+    Lock Issue
+  </button>
+</div>
+`;

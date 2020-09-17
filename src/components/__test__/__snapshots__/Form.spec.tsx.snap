@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Unit test for Issue Form component snapshot 1`] = `
+<div
+  className="sc-AxheI kFUkaA"
+>
+  <div
+    className="sc-AxhUy iOlevc"
+  >
+    <label
+      className="sc-AxhCb bnupDl"
+    >
+      Title
+    </label>
+    <div
+      className="sc-AxgMl cXEjRw"
+    >
+      <input
+        className="sc-AxiKw jxQuPo"
+        defaultValue=""
+        onChange={[Function]}
+        placeholder="Your title here"
+        required={false}
+      />
+    </div>
+  </div>
+  <div
+    className="sc-AxhUy iOlevc"
+  >
+    <label
+      className="sc-AxhCb bnupDl"
+    >
+      Content
+    </label>
+    <div
+      className="sc-AxgMl fGWvyW"
+    >
+      <textarea
+        className="sc-AxirZ jEyGyt"
+        defaultValue=""
+        onChange={[Function]}
+        required={false}
+      />
+    </div>
+  </div>
+  <button
+    className="sc-AxjAm caeeVY"
+    onClick={[Function]}
+    size={1}
+  >
+    Submit
+  </button>
+</div>
+`;

@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Unit test for TextArea component snapshot 1`] = `
+<textarea
+  className="sc-AxjAm hMroFO"
+  defaultValue=""
+  onChange={[Function]}
+  required={false}
+/>
+`;
